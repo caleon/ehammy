@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  password: MyString
+  password_confirmation: MyString
+  birthday: 2011-11-23
+  sex: false
+  salt: MyString
+
+two:
+  name: MyString
+  email: MyString
+  password: MyString
+  password_confirmation: MyString
+  birthday: 2011-11-23
+  sex: false
+  salt: MyString

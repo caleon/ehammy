@@ -1,0 +1,2 @@
+module ZodiacsHelper
+end

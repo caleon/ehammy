@@ -1,0 +1,238 @@
+.container {
+	width: 710px; 
+}           
+
+.container2 {
+	width: 750px;
+}
+
+body {
+	background-image: url('yello002.gif'); 
+}                  
+
+header {    
+	font-family: 'Lucida Sans Unicode','Trebuchet MS',Arial,sans-serif; 
+	font-size: 20px;
+	padding-top: 20px;
+}                                     
+
+section {
+	margin-top: 1em;
+	font-size: 120%;
+	padding: 20px;
+	background: #fff;
+}                 
+
+section h1 {
+	font-size: 200%;
+}                
+
+a {
+	color: black;
+	text-decoration: none;
+}                       
+
+a:hover {
+	color: black;
+	text-decoration: underline;
+}                            
+
+a:visited {
+	color: #000000;
+} 
+
+
+nav { 
+ float: right;   
+}              
+
+nav {                   
+	background-color: #eedd00;
+	padding: 0 0.7em;
+	white-space: nowrap;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}            
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.2em 0;
+}                  
+
+nav ul li a {
+	color: #fff;
+	padding: 0 5px;
+	font-weight: bold;
+}                   
+
+nav ul li a:visited {
+	color: #fff;
+}             
+
+nav ul li a:hover {
+	text-decoration: underline;
+}                 
+
+.round {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}     
+
+img.center {   
+	display: block;   
+	margin-left: auto;   
+	margin-right: auto; 
+}
+
+p.image_name {
+	text-align: center;
+	margin-top: 10px;
+}
+
+footer {  
+	color: white;  
+	font-family: 'Lucida Sans Unicode','Trebuchet MS',Arial,sans-serif;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 10px;
+	width: 710px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}                    
+
+footer nav {
+	float: none;
+} 
+
+footer:hover {
+	color: white;
+}
+
+p.caption {
+	text-align: center;
+}          
+
+a.quiz_button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	width: 170px;
+	color: #fff;
+	background: #850900;
+	font-size: 150%;
+	font-weight: bold;
+	padding: 20px;
+}  
+
+h1.answer {
+	 margin-left: auto;
+		margin-right: auto;
+		display: block;
+		text-align: center;
+		width: 420px;
+		color: #fff;
+		background: #005400;
+		font-size: 150%;
+		font-weight: bold;
+		padding: 20px;
+	}      
+
+h1.answer1 {
+	 margin-left: auto;
+		margin-right: auto;
+		display: block;
+		text-align: center;
+		width: 420px;
+		color: #fff;
+		background: #850900;
+		font-size: 150%;
+		font-weight: bold;
+		padding: 20px;
+	}    
+	
+table.profile {
+	width: 100%;
+	margin-bottom: 0;
+}                  
+
+td.main {
+	width: 60%;
+	padding: 1em;
+}              
+
+td.sidebar {
+	width: 40%;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;
+}                  
+
+ul.users {
+	margin-top: 1em;
+}
+
+.users li {
+	list-style: none;
+}             
+
+h1.micropost {
+	margin_bottom: 0.3em;
+}                      
+
+table.microposts {
+  margin-top: 1em;
+}
+
+table.microposts tr {
+  height: 70px;
+}
+
+table.microposts tr td.gravatar {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.microposts tr td.micropost {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.microposts tr td.micropost span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+div.user_info span.microposts {
+  font-size: 80%;
+}
+
+form.new_micropost {
+  margin-bottom: 2em;
+}
+
+form.new_micropost textarea {
+  height: 4em;
+  margin-bottom: 0;
+}

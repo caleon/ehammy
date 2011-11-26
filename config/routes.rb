@@ -1,4 +1,15 @@
 Ehammy::Application.routes.draw do
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]  
+  resources :zodiacs
+ 
+  match "/signup", :to => 'users#new'
+  match "/about", :to => "main#about" 
+  match "/signin", :to => 'sessions#new'
+  match "/signout", :to => 'sessions#destroy'
+  
+  root :to => 'main#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

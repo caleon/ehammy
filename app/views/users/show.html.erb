@@ -1,0 +1,16 @@
+<table class="profile" summary="Profile information">
+	<tr>
+		<td class='main'>
+			<h1>
+				<%= @user.name %>
+			</h1>     
+		 
+		</td>
+		<td class ="sidebar round">
+			<strong>Zodiac:</strong>  
+			<p>
+					<span class="animal"><%= @user.zodiac.animal %></span>
+				</p>
+		</td>
+	</tr>
+</table>                
