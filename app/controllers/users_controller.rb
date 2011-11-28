@@ -2,11 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update] 
   before_filter :correct_user, :only => [:edit, :update] 
   before_filter :admin_user,   :only => :destroy  
-  before_filter :assign_zodiac
   
-  def assign_zodiac                 
-    @zodiac = Zodiac.create(:animal => "ox")
-  end
   
   def new   
     @title = "Sign up" 
@@ -15,16 +11,17 @@ class UsersController < ApplicationController
   
   def index
     @title = "All users"
-    @users = User.includes(:zodiac).all
+    @users = User.all
   end
   
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) 
+    @animal = @user.zodiac
     @title = @user.name
   end                     
   
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user])  
     if @user.save      
       sign_in @user
       flash[:success] = "Welcome to ehalmony!"
