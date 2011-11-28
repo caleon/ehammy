@@ -53,7 +53,55 @@ class User < ActiveRecord::Base
   # as :rat.
   #
   class Zodiac
-  #   # The following date ranges are lifted from http://en.wikipedia.org/wiki/Chinese_zodiac
+  #   # The following date ranges are lifted from http://en.wikipedia.org/wiki/Chinese_zodiac    
+  ATTRIBUTES = {
+      :rat      =>  {:positive => ["good businessman", "hard-working", "cunning"], 
+                     :negative => %w[stingy]},
+      
+      :ox       =>  {:positive => %w[perserverance honest hard-working],
+                     :negative => %w[stubborn]}, 
+                     
+      :tiger    =>  {:positive => %w[passionate brave optimistic],
+                     :negative => ["sometimes unreliable"]},        
+                     
+      :rabbit   =>  {:positive => %w[ambitious fashionable graceful],
+                     :negative => ["can be lonely at times"]},
+                     
+      :dragon   =>  {:positive => %w[strong adventurous brave],
+                     :negative => ["can be arrogant at times"]},
+                     
+      :snake    =>  {:positive => %w[wise beautiful perfectionist],
+                     :negative => ["sometimes suffers from self-doubt"]},      
+                     
+      :horse    =>  {:positive => %w[attractive popular intelligent],
+                     :negative => %w[hot-tempered]},  
+                     
+      :goat     =>  {:positive => %w[artistic tender-hearted generous],
+                     :negative => %w[indecisive]},
+                     
+      :monkey   =>  {:positive => %w[smart social charismatic],
+                     :negative => ["can be arrogant at times"]},  
+                     
+      :rooster  =>  {:positive => %w[hard-working smart social],
+                     :negative => ["not good at taking advice"]},
+                     
+      :dog      =>  {:positive => %w[loyal honest friendly],
+                     :negative => ["easily criticizes others"]},
+                     
+      :pig      =>  {:positive => %w[honest social patient],
+                     :negative => ["can be materialistic"]}         
+                     
+  }                          
+  
+  def self.attributes(animal)
+    ATTRIBUTES.select { |x| x= animal} 
+  end     
+  
+  def firstattribute
+    @firstattribute = Firstattribute.attributes(@animal).first.first    
+  end
+    
+  
   TYPES = {
       :rat      => [%w(1924/2/5 1925/1/23),
                     %w(1936/1/24 1937/2/10),
@@ -161,12 +209,14 @@ class User < ActiveRecord::Base
      }.freeze
      
      def self.for_birthdate(bdate)
-       TYPES.detect do |animal, low_and_high|
-         low, high = low_and_high.map { |date_str| Date.new(*date_str.split('/')) }
-         (low..high).include?(bdate)
-       end.first # because the result of detect looksl ike [ :rat, blahblah ]
-       # result is the chinese zodiac animal name as a symbol, i.e. :rat
-     end
+          TYPES.detect do |animal, low_and_highs_array|
+            low_and_highs_array.detect do |low_and_high|
+              low, high = low_and_high.map { |date_str| Date.new(*date_str.split('/').map(&:to_i)) }
+              (low..high).include?(bdate)
+            end
+          end.first # because the result of detect looksl ike [ :rat, blahblah ]
+          # result is the chinese zodiac animal name as a symbol, i.e. :rat
+        end
    end
    
   # # If you haven't run across this yet, the ||= operator only does the calculation on the

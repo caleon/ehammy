@@ -9,8 +9,27 @@
 		<td class ="sidebar round">
 			<strong>Zodiac:</strong>  
 			<p>
-					<span class="animal"></span>
-				</p>
+					<span class="animal"><%= zodiac_image_for(@user)%></span>
+		  </p>
+		 		<table>
+					<tr>
+						<td>
+							<h2>+</h2>  
+		
+								<ul>
+									<li><%= @user.firstattribute %></li>
+									<li></li>
+									<li></li>
+								</ul>   
+						 </td>
+						<td>
+							<h2>-</h2>
+								<ul>
+									<li></li>
+								<ul>
+				    </td>
+			 		</tr>
+		 		</table>
 		</td>
 	</tr>
 </table>                
